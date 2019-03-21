@@ -1,0 +1,25 @@
+{
+  "name": "turnioniown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --output out/index.js --watch",
+    "rollup": "./node_modules/.bin/rollup src/index.js > out/index.js --format cjs"
+  },
+  "author": "Stanley Ume",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^2.1.1",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {}
+}

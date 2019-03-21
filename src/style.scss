@@ -1,0 +1,170 @@
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform:rotate(0deg);
+    transform:rotate(0deg)
+  }
+  100% {
+    -webkit-transform:rotate(359deg);
+    transform:rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform:rotate(0deg);
+    transform:rotate(0deg);
+  }
+  100% {
+    -webkit-transform:rotate(359deg);
+    transform:rotate(359deg);
+  }
+}
+.turin, .turnin, .turnioniown, .turn {
+  display: inline-block;
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+  -o-animation: rotating 2s linear infinite;
+  animation: rotating 2s linear infinite;
+}
+.spin {
+  display: inline-block;
+  -webkit-animation: fa-spin 2s linear infinite;
+  -moz-animation: fa-spin 2s linear infinite;
+  -ms-animation: fa-spin 2s linear infinite;
+  -o-animation: fa-spin 2s linear infinite;
+  animation: fa-spin 2s linear infinite;
+}
+
+// FUGGED
+@mixin glitchCopy {
+		content: attr(data-text);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+}
+
+.fugged, .fug {
+	position: relative;
+	/* Animation provies a slight random skew. Check bottom of doc
+	for more information on how to random skew. */
+	animation: glitch-skew 1s infinite linear alternate-reverse;
+
+	// Creates a copy before our text.
+	&::before{
+		// Duplicates our text with the mixin.
+		@include glitchCopy;
+		// Scoots text slightly to the left for the color offset.
+		left: 2px;
+		// Creates the color 'shadow' that happens on the glitch.
+		text-shadow: -2px 0 #ff00c1;
+		/* Creates an initial clip for our glitch. This works in
+		a typical top,right,bottom,left fashion and creates a mask
+		to only show a certain part of the glitch at a time. */
+		clip: rect(44px, 450px, 56px, 0);
+		/* Runs our glitch-anim defined below to run in a 5s loop, infinitely,
+		with an alternating animation to keep things fresh. */
+		animation: glitch-anim 5s infinite linear alternate-reverse;
+	}
+
+	// Creates a copy after our text. Note comments from ::before.
+	&::after {
+		@include glitchCopy;
+		left: -2px;
+		text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+		animation: glitch-anim2 1s infinite linear alternate-reverse;
+	}
+}
+
+/* Creates an animation with 20 steaps. For each step, it calculates
+a percentage for the specific step. It then generates a random clip
+box to be used for the random glitch effect. Also adds a very subtle
+skew to change the 'thickness' of the glitch.*/
+@keyframes glitch-anim {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+			transform: skew((random(100) / 100) + deg);
+    }
+  }
+}
+
+// Same deal, just duplicated for ultra randomness.
+@keyframes glitch-anim2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100)+px, 9999px, random(100)+px, 0);
+			transform: skew((random(100) / 100) + deg);
+    }
+  }
+}
+
+// Does the same deal as before, but now only skews. Used for main text.
+@keyframes glitch-skew {
+  $steps: 10;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      transform: skew((random(10) - 5) + deg);
+    }
+  }
+}
+
+// SO FUGGED
+@keyframes so-fugged {
+  0% {
+      -webkit-transform: translate3d(0,0,0);
+      transform: translate3d(0,0,0);
+  }
+  33% {
+      -webkit-transform: translate3d(-20px,10px,0);
+      transform: translate3d(-20px,10px,0);
+  }
+  66% {
+      -webkit-transform: translate3d(20px,0px,0);
+      transform: translate3d(20px,0px,0);
+  }
+  100% {
+      -webkit-transform: translate3d(0,0,0);
+      transform: translate3d(0,0,0);
+  }
+}
+.so-fugged {
+    display: inline-block;
+    animation-timing-function: linear;
+    transform-origin: bottom center;
+    animation-name: so-fugged;
+    animation-duration: .1s;
+    animation-iteration-count: infinite;
+}
