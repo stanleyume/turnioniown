@@ -1,4 +1,4 @@
-@-webkit-keyframes rotating /* Safari and Chrome */ {
+@-webkit-keyframes turin /* Safari and Chrome */ {
   from {
     -webkit-transform: rotate(0deg);
     -o-transform: rotate(0deg);
@@ -10,7 +10,7 @@
     transform: rotate(360deg);
   }
 }
-@keyframes rotating {
+@keyframes turin {
   from {
     -ms-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -27,7 +27,7 @@
   }
 }
 
-@-webkit-keyframes fa-spin {
+@-webkit-keyframes spin {
   0% {
     -webkit-transform:rotate(0deg);
     transform:rotate(0deg)
@@ -37,7 +37,7 @@
     transform:rotate(359deg);
   }
 }
-@keyframes fa-spin {
+@keyframes spin {
   0% {
     -webkit-transform:rotate(0deg);
     transform:rotate(0deg);
@@ -47,21 +47,21 @@
     transform:rotate(359deg);
   }
 }
-.turin, .turnin, .turnioniown, .turn {
+.turin, .turrin, .turnin, .turnioniown, .turn {
   display: inline-block;
-  -webkit-animation: rotating 2s linear infinite;
-  -moz-animation: rotating 2s linear infinite;
-  -ms-animation: rotating 2s linear infinite;
-  -o-animation: rotating 2s linear infinite;
-  animation: rotating 2s linear infinite;
+  -webkit-animation: turin 2s linear infinite;
+  -moz-animation: turin 2s linear infinite;
+  -ms-animation: turin 2s linear infinite;
+  -o-animation: turin 2s linear infinite;
+  animation: turin 2s linear infinite;
 }
 .spin {
   display: inline-block;
-  -webkit-animation: fa-spin 2s linear infinite;
-  -moz-animation: fa-spin 2s linear infinite;
-  -ms-animation: fa-spin 2s linear infinite;
-  -o-animation: fa-spin 2s linear infinite;
-  animation: fa-spin 2s linear infinite;
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  -ms-animation: spin 2s linear infinite;
+  -o-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
 }
 
 // FUGGED
@@ -167,4 +167,7 @@ skew to change the 'thickness' of the glitch.*/
     animation-name: so-fugged;
     animation-duration: .1s;
     animation-iteration-count: infinite;
+}
+body {
+  display: block !important;
 }

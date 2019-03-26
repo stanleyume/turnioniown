@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --output out/turnioniown.js --watch",
-    "rollup": "./node_modules/.bin/rollup src/index.js > out/index.js --format cjs"
+    "build": "webpack --output out/turnioniown.js --watch"
   },
   "author": "Stanley Ume",
   "license": "ISC",
